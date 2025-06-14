@@ -2,4 +2,5 @@
 JBASEADM/bin
 JBASEADM/lib
 *.o
-*\]D
+.rmv
+DB.*

@@ -10,24 +10,30 @@ docker run -it -v ~/projects/jbase/JBASEADM:/jbasedata/dbms/JBASEADM zumasys/jba
 jlogin JBASEADM
 ```
 
-### Create DB file
+### Create DB files
 
 ```
-DELETE-FILE DB.DATA
-CREATE-FILE DICT DB.DATA TYPE=HASH3 23
+DELETE-FILE DB.CUSTOMERS
+CREATE-FILE DICT DB.CUSTOMERS TYPE=HASH3 23
 ```
 
 ### Compile and Catalog BASIC
 
 ```
+BASIC BP Helpers.b
+CATALOG BP Helpers.b
+
 BASIC BP HelloWorld.b
 CATALOG BP HelloWorld.b
+HelloWorld
 
 BASIC BP Insert.b
 CATALOG BP Insert.b
+Insert
 
 BASIC BP List.b
 CATALOG BP List.b
+List
 ```
 
 ### Run Compile BASIC
