@@ -23,6 +23,11 @@ CREATE-FILE DICT DB.CUSTOMERS TYPE=HASH3 23
 BASIC BP Helpers.b
 CATALOG BP Helpers.b
 
+BASIC BP Arrays.b
+CATALOG BP Arrays.b
+HelloWorld
+
+
 BASIC BP HelloWorld.b
 CATALOG BP HelloWorld.b
 HelloWorld
@@ -34,6 +39,8 @@ Insert
 BASIC BP List.b
 CATALOG BP List.b
 List
+
+.
 ```
 
 ### Run Compile BASIC
