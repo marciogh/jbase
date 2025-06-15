@@ -10,41 +10,50 @@ docker run -it -v ~/projects/jbase/JBASEADM:/jbasedata/dbms/JBASEADM zumasys/jba
 jlogin JBASEADM
 ```
 
+### DB Structure
+
+```
+DB.CUSTOMER
+CUSTOMER_ID: Name,Addr
+
+DB.ORDERS
+ORDER_ID: COSTUMER_ID
+
+DB.ORDER-ITEMS
+ITEM|ORDER_ID: Items[]
+QTD|ORDER_ID: Qtd[]
+UNIT_PRICE|ORDER_ID: Price[]
+```
+
 ### Create DB files
 
 ```
 DELETE-FILE DB.CUSTOMERS
-CREATE-FILE DICT DB.CUSTOMERS TYPE=HASH3 23
+DELETE-FILE DB.ORDERS
+DELETE-FILE DB.ORDER_ITEMS
+
+CREATE-FILE DB.CUSTOMERS
+CREATE-FILE DB.ORDERS
+CREATE-FILE DB.ORDER_ITEMS
 ```
 
 ### Compile and Catalog BASIC
 
 ```
-BASIC BP Helpers.b
-CATALOG BP Helpers.b
+BASIC BP AddCustomers.b
+CATALOG BP AddCustomers.b
 
-BASIC BP Arrays.b
-CATALOG BP Arrays.b
-HelloWorld
+BASIC BP AddOrder.b
+CATALOG BP AddOrder.b
 
-
-BASIC BP HelloWorld.b
-CATALOG BP HelloWorld.b
-HelloWorld
-
-BASIC BP Insert.b
-CATALOG BP Insert.b
-Insert
+BASIC BP AddItem.b
+CATALOG BP AddItem.b
 
 BASIC BP List.b
 CATALOG BP List.b
+
+AddCustomers
 List
-
-.
-```
-
-### Run Compile BASIC
-
-```
-HelloWorld
+AddOrder
+AddItem
 ```

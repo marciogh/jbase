@@ -1,6 +1,10 @@
-*
-* Insert Random Customers
-*
+PRINT "############################################"
+PRINT "# "
+PRINT "# ADD RANDOM CUSTOMERS"
+PRINT "# "
+PRINT "############################################"
+PRINT ""
+
 OPEN "DB.CUSTOMERS" TO POINTER.DB.CUSTOMERS ELSE STOP ("DB.CUSTOMERS Not found")
 FOR I = 1 TO 10
   CALL SUBROUTINE.RANDOMSTRING(VAR.CUSTOMERNAME, 16)
@@ -10,3 +14,6 @@ FOR I = 1 TO 10
   ROW.CUSTOMER(2) = VAR.CUSTOMERADDR
   MATWRITE ROW.CUSTOMER ON POINTER.DB.CUSTOMERS, I
 NEXT I
+
+PRINT "Created " : I - 1 : " random customers"
+PRINT ""
